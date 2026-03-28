@@ -72,6 +72,7 @@ const Rank = () => {
                             <div className="rank-input-group">
                                 <label>Exam Type</label>
                                 <select value={examType} onChange={(e) => setExamType(e.target.value)}>
+                                    <option value="Prefrences">Exam Options</option>
                                     <option value="btech">JEE Main (B.Tech)</option>
                                     <option value="neet">NEET</option>
                                 </select>

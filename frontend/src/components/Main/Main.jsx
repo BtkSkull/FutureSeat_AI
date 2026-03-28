@@ -1,31 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Main.css'
-import college_image from "../../assets/Lamp study.png"
+
+import img1 from "../../assets/1.jpg";
+import img2 from "../../assets/2.jpg";
+import img3 from "../../assets/3.jpg";
+import img4 from "../../assets/4.jpg";
+import img5 from "../../assets/5.jpg";
+
 import { FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Main = () => {
-  const navigate = useNavigate(); // ✅ navigation enable
+  const navigate = useNavigate();
+
+  const images = [img1, img2, img3, img4, img5];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <div className="main">
+
+      {/* NAVBAR */}
       <nav className="main-navbar">
         <div className="main-logo">RankVision</div>
 
         <ul className="main-nav-links">
-          {/* <li>
-            <button onClick={() => navigate("/")}>Home</button>
-          </li> */}
-
           <li>
             <button onClick={() => navigate("/rank")}>
               College Predictor
             </button>
           </li>
-
-          {/* <li>
-            <button>Colleges</button>
-          </li> */}
 
           <li>
             <button onClick={() => navigate("/about")}>
@@ -35,38 +47,37 @@ const Main = () => {
 
           <li>
             <button onClick={() => navigate("/contact")}>
-              Contact</button>
+              Contact
+            </button>
           </li>
         </ul>
 
         <button className="main-login-btn">Login</button>
       </nav>
 
+      {/* HERO WITH SLIDING BACKGROUND */}
       <div
-        className="main-hero"
-        style={{ backgroundImage: `url(${college_image})` }}
+        className="main-hero fade"
+        style={{ backgroundImage: `url(${images[currentIndex]})` }}
       >
         <div className="main-hero-content">
-          <h1>Find the Best Colleges Based on YourRank</h1>
+          <h1>Find the Best Colleges Based on Your Rank</h1>
           <p>Enter your rank and discover the best engineering colleges.</p>
 
           <div className="main-search-box">
-            {/* <input type="text" placeholder="Enter Rank" /> */}
-
-            {/* ✅ Predict button → Rank page */}
             <button onClick={() => navigate("/rank")}>
-              Find colleges
+              Find Colleges
             </button>
           </div>
         </div>
       </div>
 
+      {/* FOOTER */}
       <div className="Main-footer">
         <div className="Main-container footer-message">
 
           <div>
             <h4>Contact</h4>
-
             <p><FaLinkedin /> Linkedin</p>
             <p><FaEnvelope /> Mail</p>
             <p><FaTwitter /> Twitter</p>
@@ -80,8 +91,9 @@ const Main = () => {
 
         </div>
       </div>
+
     </div>
   )
 }
 
-export default Main
+export default Main;

@@ -1,10 +1,12 @@
-*{
+/* RESET */
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
 
+/* NAVBAR */
 .main-navbar {
   display: flex;
   justify-content: space-between;
@@ -26,21 +28,20 @@
 }
 
 .main-nav-links li button {
-  background: transparent;      /* white hata diya */
-  border: none;                 /* border hata diya */
-  color: white;                 /* navbar ke hisaab se */
+  background: transparent;
+  border: none;
+  color: white;
   font-size: 16px;
   cursor: pointer;
   padding: 5px 10px;
 }
 
-/* hover effect */
 .main-nav-links li button:hover {
   color: #38bdf8;
 }
 
 .main-login-btn {
-  background-color: #38bdf8;
+  background-color: #0f172a;
   border: none;
   padding: 8px 16px;
   color: white;
@@ -49,62 +50,99 @@
 }
 
 .main-login-btn:hover {
-  background-color: #0284c7;
+  background-color: #0f172a;
 }
 
-.main-hero{
-  height:90vh;
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* HERO SECTION */
+.main-hero {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* smooth transition */
+  transition: background-image 1s ease-in-out;
+
+  position: relative;
+  overflow: hidden;
 }
 
-.main-hero-content{
-  background:rgba(0,0,0,0.5);
-  padding:60px;
-  color:white;
-  max-width:700px;
-  border-radius:10px;
+/*  DARK OVERLAY */
+.main-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* HERO CONTENT */
+.main-hero-content {
+  /* background: rgba(0,0,0,0.5); */
+  padding: 60px;
+  color: white;
+  max-width: 700px;
+  border-radius: 10px;
   text-align: center;
   margin-bottom: 240px;
+  margin-top: 200px;
+  position: relative;
+  z-index: 1;
 }
 
-.main-hero-content h1{
-  font-size:45px;
-  margin-bottom:15px;
+.main-hero-content h1 {
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
-.main-hero-content p{
-  font-size:18px;
-  margin-bottom:20px;
+.main-hero-content p {
+  font-size: 21px;
+  color: yellowgreen;
+  margin-bottom: 20px;
 }
 
-.main-search-box{
-  display:flex;
-  gap:10px;
+/* SEARCH BOX */
+.main-search-box {
+  display: flex;
+  gap: 10px;
   justify-content: center;
   margin-top: 20px;
 }
 
-.main-search-box input{
-  padding:12px;
-  font-size:16px;
-  border:none;
-  border-radius:5px;
+.main-search-box input {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
 }
 
-.main-search-box button{
-  padding:12px 20px;
-  background:orange;
-  border:none;
-  color:white;
-  border-radius:5px;
-  cursor:pointer;
+.main-search-box button {
+  padding: 12px 20px;
+  background: orange;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* footer */
+/*  FADE ANIMATION */
+.fade {
+  animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.6;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* FOOTER */
 .Main-footer {
   background-color: black;
   color: white;
@@ -112,7 +150,7 @@
   padding: 40px 0;
 }
 
-.footer-message{
+.footer-message {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
