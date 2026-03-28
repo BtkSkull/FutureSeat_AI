@@ -7,7 +7,6 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str
     
-    # Add these back! Pydantic needs to know to look for them in the .env file.
     ADMIN_USERNAME: str
     ADMIN_PASSWORD: str
     ADMIN_SESSION_SECRET: str
@@ -31,7 +30,6 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
-        # Adding this prevents crashes if you have extra unused variables in your .env
         extra="ignore" 
     )
 
