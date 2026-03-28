@@ -50,9 +50,15 @@ const Rank = () => {
         <div className="rank-page">
             <div className="rank-navbar">
                 <div className="rank-container">
-                    <h2>Rank Vision</h2>
+                    <h2>Rank Vision</h2> 
+
+                    <div className="rank-buttons">
                     <button onClick={() => navigate("/about")}>About</button>
+                    <button onClick={() => navigate("/")}>Home</button>
+                    </div>   
                 </div>
+                
+                    
             </div>
 
             <div className="rank-hero-section">
@@ -111,11 +117,12 @@ const Rank = () => {
                                             <option value="CW">CW (Defence)</option> {/* NEW OPTION */}
                                         </select>
                                     </div>
+
                                 </>
                             )}
 
                             <button onClick={handleAnalyze} disabled={loading}>
-                                {loading ? "Analyzing..." : "Analyze my marks"}
+                                {loading ? "Analyzing..." : "Analyze Colleges"}
                             </button>
                             
                             {error && <p style={{color: "red", marginTop: "10px"}}>{error}</p>}

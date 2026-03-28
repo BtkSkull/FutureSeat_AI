@@ -1,6 +1,6 @@
 import React from 'react'
 import './Main.css'
-import college_image from "../../assets/vision board.jpeg"
+import college_image from "../../assets/Lamp study.png"
 import { FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -10,12 +10,12 @@ const Main = () => {
   return (
     <div className="main">
       <nav className="main-navbar">
-        <div className="main-logo">FutureSeat</div>
+        <div className="main-logo">RankVision</div>
 
         <ul className="main-nav-links">
-          <li>
+          {/* <li>
             <button onClick={() => navigate("/")}>Home</button>
-          </li>
+          </li> */}
 
           <li>
             <button onClick={() => navigate("/rank")}>
@@ -23,9 +23,9 @@ const Main = () => {
             </button>
           </li>
 
-          <li>
+          {/* <li>
             <button>Colleges</button>
-          </li>
+          </li> */}
 
           <li>
             <button onClick={() => navigate("/about")}>
@@ -34,7 +34,8 @@ const Main = () => {
           </li>
 
           <li>
-            <button>Contact</button>
+            <button onClick={() => navigate("/contact")}>
+              Contact</button>
           </li>
         </ul>
 
@@ -46,15 +47,15 @@ const Main = () => {
         style={{ backgroundImage: `url(${college_image})` }}
       >
         <div className="main-hero-content">
-          <h1>Find the Best Colleges Based on Your JEE Rank</h1>
+          <h1>Find the Best Colleges Based on YourRank</h1>
           <p>Enter your rank and discover the best engineering colleges.</p>
 
           <div className="main-search-box">
-            <input type="text" placeholder="Enter Rank" />
+            {/* <input type="text" placeholder="Enter Rank" /> */}
 
             {/* ✅ Predict button → Rank page */}
             <button onClick={() => navigate("/rank")}>
-              Predict College
+              Find colleges
             </button>
           </div>
         </div>

@@ -21,26 +21,52 @@ body {
   background: #f9fafb;
   border-bottom: 1px solid #e5e7eb;
   padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
+/* CONTAINER */
 .rank-navbar .rank-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* IMPORTANT FIX */
 }
 
+/* LOGO */
 .rank-navbar h2 {
   font-size: 20px;
   font-weight: 600;
+  color: #111827;
 }
 
-.rank-navbar p {
-  color: #6b7280;
-  cursor: pointer;
+/* BUTTON WRAPPER */
+.rank-navbar .rank-buttons {
+  display: flex;
+  gap: 10px;
 }
 
-.rank-navbar p:hover {
+/* BUTTON */
+.rank-navbar button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  background: transparent;
   color: #2563eb;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.rank-navbar button:hover {
+  background: #2563eb;
+  color: #fff;
 }
 
 /* ================= HERO ================= */
@@ -120,13 +146,13 @@ body {
 }
 
 .graph-placeholder {
-  height: 320px;
+  height: 450px;
   border-radius: 16px;
-  background: linear-gradient(to top, #dbeafe, #f8fafc);
+  background: linear-gradient(to top, #2974d5, #f8fafc);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7280;
+  color: #073798;
 }
 
 /* ================= HOW ================= */
