@@ -1,0 +1,180 @@
+/* ================= PAGE ================= */
+.contact-page { 
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #dbeafe, #f8fafc);
+  text-align: center;
+  transition: 0.4s;
+}
+
+.contact-page.dark {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #fff;
+}
+
+/* ================= TOGGLE ================= */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+  transition: 0.3s;
+}
+
+.toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ================= TITLE ================= */
+.contact-page h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+.subtitle {
+  color: #6b7280;
+  margin: 10px 0 40px;
+  font-size: 15px;
+}
+
+.contact-page.dark .subtitle {
+  color: #cbd5f5;
+}
+
+/* ================= GRID ================= */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= CARD ================= */
+.team-card {
+  position: relative;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  padding: 30px 25px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+/* DARK CARD */
+.contact-page.dark .team-card {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* GRADIENT BORDER */
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* CARD HOVER (3D + LIFT) */
+.team-card:hover {
+  transform: translateY(-15px) scale(1.05) rotateX(5deg);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* ================= PROFILE IMAGE ================= */
+.profile-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 3px solid #2563eb;
+  margin-bottom: 18px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* IMAGE HOVER */
+.profile-img:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 25px #2563eb;
+}
+
+/* ================= NAME ================= */
+.team-card h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+/* ================= ROLE BADGE ================= */
+.role {
+  display: inline-block;
+  background: #e0e7ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.contact-page.dark .role {
+  background: #1e293b;
+}
+
+/* ================= DESCRIPTION ================= */
+.desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.contact-page.dark .desc {
+  color: #cbd5f5;
+}
+
+/* ================= LINKS ================= */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+/* SHOW ON HOVER */
+.team-card:hover .links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BUTTON */
+.links a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.links a:hover {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+}
